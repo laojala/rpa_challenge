@@ -1,5 +1,5 @@
 
-# Demo: Robot Framework Selenium Automaton Using Docker
+# Demo: Find number of recipes in foodie.fi website
 
 Demo project for running Robot Framework tasks in Docker and in GitHub Workflows.
 
