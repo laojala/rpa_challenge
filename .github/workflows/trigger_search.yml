@@ -1,0 +1,36 @@
+# This is a basic workflow that is manually triggered
+
+name: Trigger Recipe Search
+
+# Controls when the action will run. Workflow runs when manually triggered using the UI
+# or API.
+on:
+  workflow_dispatch:
+    # Inputs the workflow accepts.
+    inputs:
+      recipe:
+        # Friendly description to be shown in the UI instead of 'name'
+        description: 'Recipe to find:'
+        # Default value if no value is explicitly provided
+        default: 'pizza'
+        # Input has to be provided for the workflow to run
+        required: true
+
+jobs:
+    find_recipe:
+        runs-on: ubuntu-latest
+        steps:
+        - uses: actions/checkout@v2
+        - name: Find recipe from foodie.fi
+            uses: joonvena/robotframework-docker-action@v0.1
+            env:
+            BROWSER: firefox
+            ROBOT_TESTS_DIR: ${{ github.workspace }}/tasks
+            ROBOT_REPORTS_DIR: ${{ github.workspace }}/reports
+            ROBOT_OPTIONS: "--variable RECIPE_TO_SEARCH:${{ github.event.inputs.recipe }}"
+        - name: Upload run results
+            uses: actions/upload-artifact@v1
+            if: always()
+            with:
+            name: reports
+            path: ${{ github.workspace }}/reports
