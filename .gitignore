@@ -1,4 +1,5 @@
 *.html
 *.xml
 *.png
-geckodriver-
+*.log
+reports/file/recipe_numbers.log
