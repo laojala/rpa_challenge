@@ -24,13 +24,13 @@ jobs:
         - name: Find recipe from foodie.fi
             uses: joonvena/robotframework-docker-action@v0.1
             env:
-            BROWSER: firefox
-            ROBOT_TESTS_DIR: ${{ github.workspace }}/tasks
-            ROBOT_REPORTS_DIR: ${{ github.workspace }}/reports
-            ROBOT_OPTIONS: "--variable RECIPE_TO_SEARCH:${{ github.event.inputs.recipe }}"
+              BROWSER: firefox
+              ROBOT_TESTS_DIR: ${{ github.workspace }}/tasks
+              ROBOT_REPORTS_DIR: ${{ github.workspace }}/reports
+              ROBOT_OPTIONS: "--variable RECIPE_TO_SEARCH:${{ github.event.inputs.recipe }}"
         - name: Upload run results
             uses: actions/upload-artifact@v1
             if: always()
             with:
-            name: reports
-            path: ${{ github.workspace }}/reports
+              name: reports
+              path: ${{ github.workspace }}/reports
