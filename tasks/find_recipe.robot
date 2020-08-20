@@ -16,26 +16,28 @@ ${FILEPATH}             reports/file/recipe_numbers.log
 *** Tasks ***
 
 Search Recipe And Write Number Of Results To A File
-    Search Recipe   ${RECIPE_TO_SEARCH}
-    ${number} =     How Many Results On Page
-    Log To Console  ${number}
-    Append To File  ${FILEPATH}  ${RECIPE_TO_SEARCH}: ${number} \n
+    Search Recipe
+    Count Recipe Search Results
+    Save Number Of Recipes To A File
 
 *** Keywords ***
 
 Search Recipe
-    [Arguments]  ${recipe_input}
-    Wait Until Page Contains Element        id:multisearch-query
-    Input Text      id:multisearch-query    ${recipe_input}
-    Click Element   id:multisearch-btn
+    Wait Until Page Contains Element            id:multisearch-query
+    Input Text          id:multisearch-query    ${RECIPE_TO_SEARCH}
+    Click Element       id:multisearch-btn
 
-How Many Results On Page
+Count Recipe Search Results
+    Set Test Variable   ${RESULTS}          0
     Wait Until Page Contains Element        id:recipes-container
-    #Return 0 if no results
+    #Stop Execution if recipes are not found
     ${not_found}    Run Keyword And Return Status   Page Should Contain Element  css:#recipelist-wrapper > div.category-header
-    Run Keyword Unless  ${not_found}            Return From Keyword  0
+    Run Keyword Unless  ${not_found}                Return From Keyword
     # execution continues if results are found
     ${text}     Get Text                    css:#recipelist-wrapper > div.category-header 
     ${number}   Fetch From Left             ${text}      ${SPACE}
-    [RETURN]    ${number}
+    Set Test Variable    ${RESULTS}         ${number}
 
+Save Number Of Recipes To A File
+    Append To File  ${FILEPATH}  ${RECIPE_TO_SEARCH}: ${RESULTS} \n
+    Log To Console  ${RESULTS}
