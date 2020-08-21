@@ -24,7 +24,8 @@ jobs:
         steps:
         - uses: actions/checkout@v2
         - name: Find recipe from foodie.fi
-          uses: laojala/rpa_challenge/.github/actions/run-robot-framework@use_own_action
+          #uses: laojala/rpa_challenge/.github/actions/run-robot-framework@use_own_action
+          uses: joonvena/robotframework-docker-action@v0.1
           env:
             ROBOT_TESTS_DIR: ${{ github.workspace }}/tasks
             ROBOT_REPORTS_DIR: ${{ github.workspace }}/reports
