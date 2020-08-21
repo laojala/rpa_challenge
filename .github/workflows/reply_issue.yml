@@ -33,7 +33,7 @@ jobs:
             repo-token: ${{ secrets.GITHUB_TOKEN }}
             type: "title"
             regex: ".*"
-            message: "@${issue.user.login} - ${ steps.recipes.outputs.log }"
+            message: "@${issue.user.login} - ${{ steps.recipes.outputs.log }}"
         - name: Upload run results
           uses: actions/upload-artifact@v1
           if: always()
