@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
     # Inputs the workflow accepts.
     inputs:
-      input_recipe:
+      recipe:
         description: 'Recipe to find:'
         # Default value if no value is explicitly provided
         default: 'pizza'
@@ -29,9 +29,8 @@ jobs:
               --user $(id -u):$(id -g) \
               ppodgorsek/robot-framework:latest
         - name: print results
-          run: |
-            echo "Number of recipes" \
-            cat reports/file/recipe_numbers.log
+          run: echo "Number of recipes" 
+          run: cat reports/file/recipe_numbers.log
         - name: Upload run results
           uses: actions/upload-artifact@v1
           if: always()
