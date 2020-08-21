@@ -11,14 +11,14 @@ jobs:
       steps:
         - uses: actions/checkout@v2
         - name: Find recipe from foodie.fi
-            run: |
-                docker run \
-                -v ${PWD}/reports:/opt/robotframework/reports:Z \
-                -v ${PWD}/tasks:/opt/robotframework/tests:Z \
-                -v ${PWD}/reports/file://opt/robotframework/temp/reports/file/ \
-                -e ROBOT_OPTIONS="--variable RECIPE_TO_SEARCH:${{ github.event.issue.title}}" \
-                --user $(id -u):$(id -g) \
-                ppodgorsek/robot-framework:latest
+          run: |
+            docker run \
+            -v ${PWD}/reports:/opt/robotframework/reports:Z \
+            -v ${PWD}/tasks:/opt/robotframework/tests:Z \
+            -v ${PWD}/reports/file://opt/robotframework/temp/reports/file/ \
+            -e ROBOT_OPTIONS="--variable RECIPE_TO_SEARCH:${{ github.event.issue.title}}" \
+            --user $(id -u):$(id -g) \
+            ppodgorsek/robot-framework:latest
         - name: Autoclose issue
           uses: arkon/issue-closer-action@v1.1
           with:
