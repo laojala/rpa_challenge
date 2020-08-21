@@ -55,3 +55,7 @@ This project is licensed under the MIT License.
 
 * [https://github.com/ppodgorsek/docker-robot-framework](https://github.com/ppodgorsek/docker-robot-framework)
 
+### Alternative Docker images
+
+* [https://github.com/Yleisradio/docker-robotframework](https://github.com/Yleisradio/docker-robotframework)
+
