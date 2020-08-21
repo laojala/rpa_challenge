@@ -29,6 +29,6 @@ jobs:
             - name: Upload run results
               uses: actions/upload-artifact@v1
               if: always()
-               with:
+              with:
                 name: reports
                 path: ${{ github.workspace }}/reports
