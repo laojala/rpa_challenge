@@ -4,4 +4,4 @@ description: 'Run Robot Framework tests'
 runs:
   using: 'docker'
   image: docker://ppodgorsek/robot-framework:latest
-  #  args: '--user $(id -u):$(id -g)'
+    args: '--user $(id -u):$(id -g)'
