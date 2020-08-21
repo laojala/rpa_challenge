@@ -30,8 +30,8 @@ jobs:
             ROBOT_TESTS_DIR: ${{ github.workspace }}/tasks
             ROBOT_REPORTS_DIR: ${{ github.workspace }}/reports
             ROBOT_OPTIONS: --variable RECIPE_TO_SEARCH:${{ github.event.inputs.recipe }}
-            ROBOT_UID: 'id -u'
-            ROBOT_GID: 'id -g'
+            ROBOT_UID: id -u
+            ROBOT_GID: id -g
         - name: print results
           run: |
             echo "Number of recipes" 
