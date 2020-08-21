@@ -24,7 +24,9 @@ jobs:
         steps:
         - uses: actions/checkout@v2
         - name: Find recipe from foodie.fi
-          uses: ./.github/actions/action@use_own_action
+          uses: ./.github/actions/action
+          with:
+            branch: use_own_action
           env:
             ROBOT_TESTS_DIR: ${{ github.workspace }}/tasks
             ROBOT_REPORTS_DIR: ${{ github.workspace }}/reports
