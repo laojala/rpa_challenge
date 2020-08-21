@@ -64,5 +64,5 @@ Count Recipe Search Results
     Set Test Variable    ${RESULTS}         ${number}
 
 Save Number Of Recipes To A File
-    Append To File  ${FILEPATH}  ${RECIPE_TO_SEARCH}: ${RESULTS} \n
+    Append To File  ${FILEPATH}  ${RECIPE_TO_SEARCH}: ${RESULTS}
     Log To Console  ${RECIPE_TO_SEARCH}: ${RESULTS}
