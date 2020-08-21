@@ -29,7 +29,9 @@ jobs:
               --user $(id -u):$(id -g) \
               ppodgorsek/robot-framework:latest
         - name: print results
-          run: ls # todo: print file where number is 
+          run: |
+            echo "Number of recipes" \
+            cat reports/file/recipe_numbers.log
         - name: Upload run results
           uses: actions/upload-artifact@v1
           if: always()
