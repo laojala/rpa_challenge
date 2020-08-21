@@ -20,12 +20,13 @@ jobs:
         steps:
         - uses: actions/checkout@v2
         - name: Find recipe from foodie.fi
-          run: docker run \
-          -v ${PWD}/reports:/opt/robotframework/reports:Z \
-          -v ${PWD}/tasks:/opt/robotframework/tests:Z \
-          -v ${PWD}/reports/file://opt/robotframework/temp/reports/file/ \
-          -e ROBOT_OPTIONS="--variable RECIPE_TO_SEARCH:${{ github.event.inputs.recipe }}" \
-          ppodgorsek/robot-framework:latest
+          run: |
+            docker run \
+              -v ${PWD}/reports:/opt/robotframework/reports:Z \
+              -v ${PWD}/tasks:/opt/robotframework/tests:Z \
+              -v ${PWD}/reports/file://opt/robotframework/temp/reports/file/ \
+              -e ROBOT_OPTIONS="--variable RECIPE_TO_SEARCH:${{ github.event.inputs.recipe }}" \
+              ppodgorsek/robot-framework:latest
         - name: print results
           run: ls # todo: print file where number is 
         - name: Upload run results
