@@ -1,5 +1,5 @@
   
-name: 'Robot Framework'
+name: run-robot-framework
 description: 'Run Robot Framework tests'
 runs:
   using: 'docker'
