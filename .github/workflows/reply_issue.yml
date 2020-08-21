@@ -1,35 +1,35 @@
 name: Reply to issue
 
 on:
-  issues:
-    types: [opened]
+    issues:
+        types: [opened]
 
 jobs:
-  search_recipe_and_reply:
-    find_recipe:
-      runs-on: ubuntu-latest
-      steps:
-        - uses: actions/checkout@v2
-        - name: Find recipe from foodie.fi
-          run: |
-            docker run \
-            -v ${PWD}/reports:/opt/robotframework/reports:Z \
-            -v ${PWD}/tasks:/opt/robotframework/tests:Z \
-            -v ${PWD}/reports/file://opt/robotframework/temp/reports/file/ \
-            -e ROBOT_OPTIONS="--variable RECIPE_TO_SEARCH:${{ github.event.issue.title}}" \
-            --user $(id -u):$(id -g) \
-            ppodgorsek/robot-framework:latest
-        - name: Autoclose issue
-          uses: arkon/issue-closer-action@v1.1
-          with:
-            repo-token: ${{ secrets.GITHUB_TOKEN }}
-            type: "title"
-            regex: ".**"
-            message: "@${issue.user.login} $(cat reports/file/recipe_numbers.log)"
+    search_recipe_and_reply:
+        find_recipe:
+            runs-on: ubuntu-latest
+            steps:
+            - uses: actions/checkout@v2
+            - name: Find recipe from foodie.fi
+                run: |
+                docker run \
+                -v ${PWD}/reports:/opt/robotframework/reports:Z \
+                -v ${PWD}/tasks:/opt/robotframework/tests:Z \
+                -v ${PWD}/reports/file://opt/robotframework/temp/reports/file/ \
+                -e ROBOT_OPTIONS="--variable RECIPE_TO_SEARCH:${{ github.event.issue.title}}" \
+                --user $(id -u):$(id -g) \
+                ppodgorsek/robot-framework:latest
+            - name: Autoclose issue
+                uses: arkon/issue-closer-action@v1.1
+                with:
+                    repo-token: ${{ secrets.GITHUB_TOKEN }}
+                    type: "title"
+                    regex: ".**"
+                    message: "@${issue.user.login} $(cat reports/file/recipe_numbers.log)"
         - name: Upload run results
-          uses: actions/upload-artifact@v1
-          if: always()
-          with:
-            name: reports
-            path: ${{ github.workspace }}/reports
+            uses: actions/upload-artifact@v1
+            if: always()
+            with:
+                name: reports
+                path: ${{ github.workspace }}/reports
             
