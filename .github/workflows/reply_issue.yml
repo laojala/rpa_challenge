@@ -26,15 +26,14 @@ jobs:
             echo "Number of recipes" 
             cat reports/file/recipe_numbers.log
         - name: print variable
-          run: |
-              echo ${{steps.recipes.outputs.log}}
+          run: echo ${{ steps.recipes.outputs.log }}
         - name: Autoclose issue
           uses: arkon/issue-closer-action@v1.1
           with:
             repo-token: ${{ secrets.GITHUB_TOKEN }}
             type: "title"
             regex: ".*"
-            message: "@${issue.user.login} ${{steps.recipes.outputs.log}}"
+            message: "@${issue.user.login} - ${ steps.recipes.outputs.log }"
         - name: Upload run results
           uses: actions/upload-artifact@v1
           if: always()
