@@ -8,7 +8,7 @@ Demo project for running Robot Framework tasks in Docker and in GitHub Workflows
 Project is inspired by the [Mimmit Koodaa RPA summer challenge 2020](https://mimmitkoodaa.ohjelmistoebusiness.fi/blogi/rpa-summer-challenge/). 
 
 Project demonstrates:
-1. How to run Robot Framework Tasks using Docker without need to install _anything_ Robot Framework related to a computer.
+1. How to run Robot Framework Tasks using Docker without need to install Python and Robot Framework to a computer.
 2. How to run Robot Framework Tasks in GitHub Workflow using GithubActions 
 
 ## Run Tasks locally using Docker
@@ -21,7 +21,7 @@ Project demonstrates:
 
 ### Run Tasks locally using Docker
 
-This approach works for *any* Robot Framework tasks/tests that utilise libraries pre-installed to the [ppodgorsek/robot-framework Docker container](https://hub.docker.com/r/ppodgorsek/robot-framework) 
+This approach works for all Robot Framework tasks/tests that utilise libraries pre-installed to the [ppodgorsek/robot-framework Docker container](https://hub.docker.com/r/ppodgorsek/robot-framework).
 
 To run Tasks, paste following to a Mac/Linux terminal or Windows Powershell:
 
