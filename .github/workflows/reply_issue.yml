@@ -18,17 +18,16 @@ jobs:
               -e ROBOT_OPTIONS="--variable RECIPE_TO_SEARCH:${{ github.event.inputs.recipe }}" \
               --user $(id -u):$(id -g) \
               ppodgorsek/robot-framework:latest
-        - name: print results
-          run: |
-            echo "Number of recipes" 
-            cat reports/file/recipe_numbers.log
+        - name: set results as variable
+          id: recipes
+          run: echo "::set-output name=result::$(cat reports/file/recipe_numbers.log)"
         - name: Autoclose issue
           uses: arkon/issue-closer-action@v1.1
           with:
             repo-token: ${{ secrets.GITHUB_TOKEN }}
             type: "title"
             regex: ".*"
-            message: "@${issue.user.login} $(cat reports/file/recipe_numbers.log)"
+            message: "@${issue.user.login} ${{steps.recipes.outputs.result}}"
         - name: Upload run results
           uses: actions/upload-artifact@v1
           if: always()
