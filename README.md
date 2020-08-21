@@ -21,7 +21,7 @@ Project demonstrates:
 
 ### Run Tasks locally using Docker
 
-This approach work for *any* Robot Framework tasks/tests that utilise libraries pre-installed to the [ppodgorsek/robot-framework Docker container](https://hub.docker.com/r/ppodgorsek/robot-framework) 
+This approach works for *any* Robot Framework tasks/tests that utilise libraries pre-installed to the [ppodgorsek/robot-framework Docker container](https://hub.docker.com/r/ppodgorsek/robot-framework) 
 
 To run Tasks, paste following to a Mac/Linux terminal or Windows Powershell:
 
