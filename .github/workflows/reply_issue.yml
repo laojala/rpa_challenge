@@ -26,7 +26,7 @@ jobs:
             echo "Number of recipes" 
             cat reports/file/recipe_numbers.log
         - name: print variable
-          run: echo This is the variable $RESULT
+          run: echo ${{env.RESULT}}
         - name: Autoclose issue
           uses: arkon/issue-closer-action@v1.1
           with:
