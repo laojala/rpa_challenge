@@ -26,6 +26,7 @@ jobs:
               -v ${PWD}/tasks:/opt/robotframework/tests:Z \
               -v ${PWD}/reports/file://opt/robotframework/temp/reports/file/ \
               -e ROBOT_OPTIONS="--variable RECIPE_TO_SEARCH:${{ github.event.inputs.recipe }}" \
+              --user $(id -u):$(id -g) \
               ppodgorsek/robot-framework:latest
         - name: print results
           run: ls # todo: print file where number is 
