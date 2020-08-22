@@ -22,7 +22,7 @@ jobs:
           id: recipes
           run: | 
             echo "::set-output name=RESULT::$(cat reports/file/recipe_numbers.log)"
-            echo ${{ steps.recipes.outputs.log }}
+            echo this is the variable: ${{ steps.recipes.outputs.log }}
         - name: print results
           run: |
             echo "Number of recipes" 
