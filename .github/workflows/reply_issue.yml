@@ -35,7 +35,7 @@ jobs:
             repo-token: ${{ secrets.GITHUB_TOKEN }}
             type: "title"
             regex: ".*"
-            message: "variable here" $SELECTED_COLOR
+            message: "variable here $SELECTED_COLOR"
         - name: Upload run results
           uses: actions/upload-artifact@v1
           if: always()
