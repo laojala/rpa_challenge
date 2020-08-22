@@ -20,7 +20,9 @@ jobs:
               ppodgorsek/robot-framework:latest
         - name: Set results as variable
           id: recipes
-          run: echo "::set-output name=RESULT::$(cat reports/file/recipe_numbers.log)"
+          run: | 
+            echo "::set-output name=RESULT::$(cat reports/file/recipe_numbers.log)"
+            echo ${{ steps.recipes.outputs.log }}
         - name: print results
           run: |
             echo "Number of recipes" 
@@ -33,7 +35,7 @@ jobs:
             repo-token: ${{ secrets.GITHUB_TOKEN }}
             type: "title"
             regex: ".*"
-            message: ${{ steps.recipes.outputs.log }}
+            message: "${{ steps.recipes.outputs.log }}"
         - name: Upload run results
           uses: actions/upload-artifact@v1
           if: always()
