@@ -21,8 +21,8 @@ jobs:
         - name: Set results as variable
           id: recipes
           run: | 
-            echo "::set-output name=result::{cat reports/file/recipe_numbers.log}"
-            echo this is the variable: ${{ steps.recipes.outputs.result }}
+            echo "::set-env name=result::debug"
+            echo this is the variable: ${{ env.result }}
         - name: print results
           run: |
             echo "Number of recipes" 
@@ -35,7 +35,7 @@ jobs:
             repo-token: ${{ secrets.GITHUB_TOKEN }}
             type: "title"
             regex: ".*"
-            message: "${{ steps.recipes.outputs.result }}"
+            message: "variable here"
         - name: Upload run results
           uses: actions/upload-artifact@v1
           if: always()
