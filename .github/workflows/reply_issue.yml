@@ -21,8 +21,8 @@ jobs:
         - name: Set results as variable
           id: recipes
           run: | 
-            echo "::set-env name=result::debug"
-            echo this is the variable: ${{ env.result }}
+            echo '::set-env name=SELECTED_COLOR::green'
+            echo 'selected color is' $SELECTED_COLOR
         - name: print results
           run: |
             echo "Number of recipes" 
@@ -35,7 +35,7 @@ jobs:
             repo-token: ${{ secrets.GITHUB_TOKEN }}
             type: "title"
             regex: ".*"
-            message: "variable here"
+            message: "variable here" $SELECTED_COLOR
         - name: Upload run results
           uses: actions/upload-artifact@v1
           if: always()
