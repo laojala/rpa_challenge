@@ -12,7 +12,7 @@ Demo is inspired by the [Mimmit Koodaa RPA summer challenge 2020](https://mimmit
 1. How to run Robot Framework Tasks using Docker without need to install Python and Robot Framework to a computer
 2. How to run Robot Framework Tasks in GitHub Workflow using GithubActions:
     * Automated runs for commits in the main branch and pull requests. Action can be also triggered manually (configuration:  [.github/workflows/trigger_search.yml](.github/workflows/trigger_search.yml))
-    * When new issue is opened. Action uses issue title to search a recipe in [foodie.fi/recipes](https://www.foodie.fi/recipes) and closes issue by commenting number of search results in a comment. **This is the wacky wildcard** submission for the  [DEV.to Hackathon](https://dev.to/devteam/announcing-the-github-actions-hackathon-on-dev-3ljn) 🍕🍝🥕.
+    * Run Tasks when a new issue is opened. Action uses issue title to search a recipe in [foodie.fi/recipes](https://www.foodie.fi/recipes) and closes issue by commenting number of search results in a comment. **This is the wacky wildcard** submission for the  [DEV.to Hackathon](https://dev.to/devteam/announcing-the-github-actions-hackathon-on-dev-3ljn) 🍕🍝🥕.
 
 ## Run Tasks locally using Docker
 
