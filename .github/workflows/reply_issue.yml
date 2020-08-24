@@ -22,8 +22,8 @@ jobs:
           id: recipes
           run: |
             file="reports/file/recipe_numbers.log"
-            result=$(cat "$file")
-            echo "::set-env name=RECIPES::$results"
+            result=$(cat $file)
+            echo "::set-env name=RECIPES::$result"
         - name: print results
           run: |
             echo "Number of recipes" 
