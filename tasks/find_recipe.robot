@@ -8,7 +8,7 @@ Library         SeleniumLibrary
 Library         OperatingSystem     #used to write number of results to file
 Library         String              #used to fetch number of recipes from a string
 
-#Suite Setup    Remove Results File  # this is needed if run without docker, otherwise it writes to an existing file
+Suite Setup     Remove Results File
 Task Setup      Open Browser  https://www.foodie.fi/recipes
 Task Teardown   Close Browser
 
@@ -33,6 +33,9 @@ Search Recipe And Write Number Of Results To A File
     Save Number Of Recipes To A File
 
 *** Keywords ***
+
+Remove Results File
+    Remove File         ${FILEPATH}
 
 Search Recipe
     Set Pizza As Default If Recipe Is Empty
