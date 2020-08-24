@@ -20,9 +20,10 @@ jobs:
               ppodgorsek/robot-framework:latest
         - name: Set results as variable
           id: recipes
-          run: | 
-            echo '::set-env name=SELECTED_COLOR::green'
-            echo 'selected color is' $SELECTED_COLOR
+          run: |
+            file="reports/file/recipe_numbers.log"
+            result=$(cat "$file")
+            echo "::set-env name=RECIPES::$results"
         - name: print results
           run: |
             echo "Number of recipes" 
@@ -35,7 +36,7 @@ jobs:
             repo-token: ${{ secrets.GITHUB_TOKEN }}
             type: "title"
             regex: ".*"
-            message: "variable here $SELECTED_COLOR"
+            message: ${{ env.RECIPES }}
         - name: Upload run results
           uses: actions/upload-artifact@v1
           if: always()
