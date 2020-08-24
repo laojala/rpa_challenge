@@ -84,6 +84,7 @@ This project is licensed under the MIT License.
 ## Related Projects
 
 * My other GitHub Actions demo that implements CI for Robot Framework tests:
-    * [https://github.com/laojala/robot_docker_demo](https://github.com/laojala/robot_docker_demo)
+    * [https://dev.to/laojala/robot-framework-ci-demo-274o](https://dev.to/laojala/robot-framework-ci-demo-274o)
+    * [Project in GitHub](https://github.com/laojala/robot_docker_demo)
 
 
