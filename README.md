@@ -68,7 +68,7 @@ Workflows are defined in a folder [.github/workflows/](.github/workflows/).
 
 To trigger the recipe search, [open issue to this project](https://github.com/laojala/rpa_challenge/issues) and place a recipe you want to search to a title. Then wait around one minute and when issue is closed, search results are posted as a comment.
  
-![GitHub issue with a title "pizza". Issue is closed by a "GitHub Actions bot" and reply message contains user mention and number of search results "@laojala - pizza: 109"](rpa_github_actions.png "Issue search")
+![GitHub issue with a title "pizza". Issue is closed by a "GitHub Actions bot" and reply message contains user mention and number of search results "@laojala - pizza: 109"](readme_images/rpa_github_actions.png "Issue search")
 
 ## License
 
