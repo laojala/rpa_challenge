@@ -79,7 +79,7 @@ This project is licensed under the MIT License.
 * Docker Image used for running Robot Framewoek Tasks:
    * [https://github.com/ppodgorsek/docker-robot-framework](https://github.com/ppodgorsek/docker-robot-framework)
 * Issue matching auto-closer Action that closes recipe searchs:
-    * [https://github.com/marketplace/actions/issue-matching-auto-closer]([https://github.com/marketplace/actions/issue-matching-auto-closer)
+    * [https://github.com/marketplace/actions/issue-matching-auto-closer](https://github.com/marketplace/actions/issue-matching-auto-closer)
     
 ## Related Projects
 
