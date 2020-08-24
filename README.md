@@ -7,7 +7,7 @@ Demo project for running Robot Framework tasks in Docker and in GitHub Workflows
 
 Demo is inspired by the [Mimmit Koodaa RPA summer challenge 2020](https://mimmitkoodaa.ohjelmistoebusiness.fi/blogi/rpa-summer-challenge/). Project is also a submission to a [GitHub Actions Hackathon on DEV](https://dev.to/devteam/announcing-the-github-actions-hackathon-on-dev-3ljn) as it demonstrates usage of GitHub Actions.
 
-Project demonstrates:
+### Project demonstrates
 
 1. How to run Robot Framework Tasks using Docker without need to install Python and Robot Framework to a computer.
 2. How to run Robot Framework Tasks in GitHub Workflow using GithubActions:
