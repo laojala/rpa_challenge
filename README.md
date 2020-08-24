@@ -22,7 +22,7 @@ Demo is inspired by the [Mimmit Koodaa RPA summer challenge 2020](https://mimmit
 2. Place tasks to a folder `tasks`
 3. Create folder `reports`
 
-### Run Tasks locally using Docker
+### Docker command
 
 This approach works for all Robot Framework tasks/tests that utilise libraries pre-installed to the [ppodgorsek/robot-framework Docker container](https://hub.docker.com/r/ppodgorsek/robot-framework).
 
